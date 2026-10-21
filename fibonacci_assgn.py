@@ -49,3 +49,29 @@ for n in range(0, 21):
     print(f"n={n:2}  A={a}  B={b}  Match={a==b}")
 
 print()
+
+
+print("PART 2 - Algorithm A results")
+print(f"{'n':>4} {'calls':>12} {'time(s)':>12}")
+print("-" * 32)
+
+for n in [5, 10, 15, 20, 25, 30, 35]:
+    reset_A()
+    start = time.perf_counter()
+    fib_A(n)
+    t = time.perf_counter() - start
+    print(f"{n:4} {calls_A:12} {t:12.6f}")
+    if t > 60:
+        break
+
+print()
+print("PART 2 - Algorithm B results")
+print(f"{'n':>4} {'calls':>12} {'time(s)':>12}")
+print("-" * 32)
+
+for n in [10, 50, 100, 200, 500, 1000]:
+    reset_B()
+    start = time.perf_counter()
+    fib_B(n)
+    t = time.perf_counter() - start
+    print(f"{n:4} {calls_B:12} {t:12.6f}")
