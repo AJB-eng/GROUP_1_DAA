@@ -37,3 +37,15 @@ def reset_B():
     fibtable = {}
 
 print(" Algorithm B ready")
+
+print("\n- Checking answers for n = 0 to 20")
+print("-" * 45)
+
+for n in range(0, 21):
+    reset_A()
+    reset_B()
+    a = fib_A(n)
+    b = fib_B(n)
+    print(f"n={n:2}  A={a}  B={b}  Match={a==b}")
+
+print()
